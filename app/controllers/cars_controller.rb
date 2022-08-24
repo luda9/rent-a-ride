@@ -42,6 +42,8 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:brand, :year, :color, :model, :plate, :price, :url)
+    params.require(:car).permit(:brand, :year, :color, :model, :plate, :price, :photo)
   end
 end
+
+#RemoveUrlFromCars
