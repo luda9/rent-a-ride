@@ -8,6 +8,6 @@
 
 daniel = User.create(email: "daniel@gmail.com", password: "hello123", first_name: "daniel", last_name: "santillan")
 
-bocho = Car.create(user_id: daniel, brand: "mercedes", year: "1999", color: "white", model: "bocho", plate: "wrr44w", price: "1000", url: "google.com")
+# bocho = Car.create(brand: "mercedes", year: "1999", color: "white", model: "bocho", plate: "wrr44w", price: "1000", url: "google.com")
 
 # booking1 = Booking.create(car_id: bocho, user_id: daniel)
