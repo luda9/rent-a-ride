@@ -3,3 +3,6 @@ class Car < ApplicationRecord
   validates :year, :price, numericality: { only_integer: true }
   validates :year, numericality: { less_than_or_equal_to: 2022 }
 end
+
+
+# comentario
