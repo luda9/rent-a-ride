@@ -5,8 +5,5 @@ class Car < ApplicationRecord
   has_one_attached :photo
 
   has_many :bookings, dependent: :destroy
-  # belongs_to :user
-  # belongs_to :user, through: :bookings
+  has_many :users, through: :bookings
 end
-
-# comentario
