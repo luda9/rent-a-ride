@@ -1,12 +1,12 @@
 <div class="container my-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-    <h3>Your booking</h3>
+    <h3>Create a new booking</h3>
       <%= simple_form_for [@car, @booking] do |f| %>
         <%= f.input :initial, as: :date, label: 'Initial date' %>
         <%= f.input :final, as: :date, label: 'Final date' %>
 
-        <%= f.submit class: 'btn btn-flat' %>
+        <%= f.submit class: 'btn brand-color' %>
       <% end %>
     </div>
   </div>

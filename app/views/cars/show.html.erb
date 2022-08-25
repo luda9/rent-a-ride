@@ -13,7 +13,7 @@
       <h4>$<%= @car.price %> p/d</h4>
     </div>
     <div class="car-button">
-      <a href="#">Book this car</a>
+    <%= link_to "Book this car", new_car_booking_path(@car) %>
     </div>
     <div class="car-conditions">
       <a href="#">Terms and conditions</a>
