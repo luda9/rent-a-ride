@@ -1,10 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" id="nav-bar">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to  root_path, class: "navbar-brand" do %>
       <%= image_tag "https://res.cloudinary.com/luda9/image/upload/v1661283064/IMG_6325_mvoyk8.png", style:'width:50px;'%>
       <%# <p style="display: inline;">Rent a ride</p> %>
-      <%= link_to "Rent a ride", root_path, class:"text-decoration-none text-secondary" %>
     <% end %>
+      <%= link_to "Rent a ride", cars_path, class:"text-decoration-none text-secondary" %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

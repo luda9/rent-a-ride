@@ -9,9 +9,10 @@
         <%= f.input :model, placeholder: 'A3' %>
         <%= f.input :plate, placeholder: 'R3NT4R1DE' %>
         <%= f.input :price, placeholder: 'Price per day' %>
-        <%= f.input :photo, as: :file %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
-        <%= f.submit class: 'btn btn-flat' %>
+
+        <%= f.submit class: 'btn brand-color' %>
       <% end %>
     </div>
   </div>

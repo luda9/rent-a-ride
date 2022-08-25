@@ -3,13 +3,12 @@
 <div class="d-flex" style="100vw">
 <% @cars.each do |car| %>
   <div class="card m-2" style="width: 18rem;">
-    <%= cl_image_tag car.photo.key %>
-    <%# <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap"> %>
+    <%= cl_image_tag car.photos.first.key %>
     <div class="card-body">
       <h5 class="card-title"><%= car.brand%><%= car.model %></h5>
       <p class="card-text"><%= car.year%></p>
       <p class="card-text">$<%= car.price %> p/d</p>
-      <a href="#" class="btn btn-primary">Book this car</a>
+      <%= link_to "View more", car, class: "btn brand-color" %>
     </div>
   </div>
 <% end %>
