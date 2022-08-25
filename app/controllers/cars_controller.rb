@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class CarsController < ApplicationController
   def index
     @cars = Car.all
@@ -10,13 +12,22 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     if @car.save
-      redirect_to cars_path
+      if @car.photos.attached?
+        redirect_to cars_path
+      else
+        file = URI.open("https://www.clasificadoscontacto.com/_nuxt/img/auto-placeholder.84bcc3a.jpeg")
+        # article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+        @car.photos.attach(io: file, filename: "placeholder", content_type: "image/png")
+        @car.save
+        redirect_to cars_path
+      end
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
+    @car = Car.find(params[:id])
   end
 
   def edit
@@ -42,7 +53,7 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:brand, :year, :color, :model, :plate, :price, :photo)
+    params.require(:car).permit(:brand, :year, :color, :model, :plate, :price, photos: [])
   end
 end
 

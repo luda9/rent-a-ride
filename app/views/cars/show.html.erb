@@ -1,5 +1,28 @@
-<h1><%= Car.brand %></h1>
-<h1><%= Car.model %></h1>
-
-<p>Find me in app/views/cars/show.html.erb</p>
-<%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="show-car">
+  <div class="car-info">
+    <div class="car-header">
+      <h1><%= @car.brand %> <%= @car.model %> <%= @car.year %></h1>
+    </div>
+    <div class="car-ul">
+      <ul>
+        <li>Color: <%= @car.color %></li>
+        <li>Plate: <%= @car.plate %></li>
+      </ul>
+    </div>
+    <div class="car-price">
+      <h4>$<%= @car.price %> p/d</h4>
+    </div>
+    <div class="car-button">
+      <a href="#">Book this car</a>
+    </div>
+    <div class="car-conditions">
+      <a href="#">Terms and conditions</a>
+      <a href="#">Requirements</a>
+    </div>
+  </div>
+  <div class="car-image">
+    <% @car.photos.each do |photo| %>
+      <%= cl_image_tag photo.key %>
+    <% end %>
+  </div>
+</div>
