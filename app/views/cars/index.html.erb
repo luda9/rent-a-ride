@@ -1,15 +1,17 @@
-<h2>Cars available for rent</h2>
 
-<div class="d-flex" style="100vw">
-  <% @cars.each do |car| %>
-    <div class="card m-2" style="width: 18rem;">
-      <%= cl_image_tag car.photos.first.key %>
-      <div class="card-body">
-        <h5 class="card-title"><%= car.brand%><%= car.model %></h5>
-        <p class="card-text"><%= car.year%></p>
-        <p class="card-text">$<%= car.price %> p/d</p>
-        <%= link_to "View more", car, class: "btn brand-color" %>
-      </div>
-    </div>
-  <% end %>
+<div class="cars-header-index">
+  <h2>Cars available for rent</h2>
 </div>
+  <div class="cars-list">
+    <% @cars.each do |car| %>
+      <div class="card m-2" style="width: 18rem;">
+        <%= cl_image_tag car.photos.first.key %>
+        <div class="card-body">
+          <h5 class="card-title"><%= car.brand%> <%= car.model %></h5>
+          <p class="card-text"><%= car.year%></p>
+          <p class="card-text">$<%= car.price %> p/d</p>
+          <%= link_to "View more", car, class: "btn brand-color" %>
+        </div>
+      </div>
+    <% end %>
+  </div>

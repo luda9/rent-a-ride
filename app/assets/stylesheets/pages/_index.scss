@@ -1,7 +1,19 @@
 // Import page-specific CSS files here.
+@import "home";
+@import "show-car";
+
 .brand-color{
   background-color: #8D6F57;
   color: white
 }
-@import "home";
-@import "show-car";
+
+.cars-header-index{
+  width: 100%;
+  padding: 20px 8% 10px 8%;
+}
+
+.cars-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
