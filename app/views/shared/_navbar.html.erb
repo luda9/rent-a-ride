@@ -2,7 +2,9 @@
   <div class="container-fluid">
     <%= link_to  root_path, class: "navbar-brand" do %>
       <%= image_tag "https://res.cloudinary.com/luda9/image/upload/v1661283064/IMG_6325_mvoyk8.png", style:'width:50px;'%>
-      <%# <p style="display: inline;">Rent a ride</p> %>
+      <% if user_signed_in? %>
+        <%= current_user.first_name.capitalize %>
+      <% end %>
     <% end %>
       <%= link_to "Rent a ride", cars_path, class:"text-decoration-none text-secondary" %>
 
@@ -23,7 +25,7 @@
             <%= link_to "Promote", new_car_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-          <%= image_tag "https://www.psychologyexperts.org/wp-content/uploads//2017/12/Portrait_Placeholder.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
               <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>

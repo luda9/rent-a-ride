@@ -11,6 +11,12 @@
           <p class="card-text"><%= car.year%></p>
           <p class="card-text">$<%= car.price %> p/d</p>
           <%= link_to "View more", car, class: "btn brand-color" %>
+          <% if policy(car).edit? %>
+            <%= link_to "Edit", edit_car_path(car), class: "btn btn-secondary" %>
+          <% end %>
+          <% if policy(car).destroy? %>
+            <%= link_to "Remove", car_path(car), class:"text-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <% end %>
         </div>
       </div>
     <% end %>
