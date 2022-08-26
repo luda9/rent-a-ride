@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :car
   belongs_to :user
 
-  validates :initial, :final, :accepted, presence: true
+  validates :initial, :final, presence: true
   validate :validate_created_at
 
   private
