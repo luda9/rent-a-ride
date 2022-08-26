@@ -13,9 +13,9 @@
       <h4>$<%= @car.price %> p/d</h4>
     </div>
     <div class="car-button">
-      <% unless policy(@car).new? %>
+      <%# <% unless policy(@car).new? %> %>
         <%= link_to "Book this car", new_car_booking_path(@car) %>
-      <% end %>
+      <%# <% end %> %>
     </div>
     <div class="car-conditions">
       <a href="#">Terms and conditions</a>
