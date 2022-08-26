@@ -1,11 +1,12 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = current_user.bookings
+    @bookings = policy_scope(Booking).where(user: current_user)
   end
 
   def new
     @car = Car.find(params[:car_id])
     @booking = Booking.new
+    authorize @car
   end
 
   def create
@@ -13,8 +14,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.car = @car
     @booking.user = current_user
+    authorize @car
     if @booking.save
-      redirect_to cars_path
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
