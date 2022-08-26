@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: %i[destroy index]
   resources :cars, only: :destroy
+  resources :users, only: :show
 end

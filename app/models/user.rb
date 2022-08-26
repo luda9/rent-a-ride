@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :cars, through: :bookings
   has_many :cars, foreign_key: "user_id"
-
+  has_one_attached :photo
 end
